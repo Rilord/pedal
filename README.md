@@ -1,5 +1,7 @@
 # pedal
 
+pedal is HTTP wrapper for PDAL which uses S3 for handling files
+
 ## Run inside conda
 
 `conda create -n pdal -c conda-forge python-pdal python=3.9`
