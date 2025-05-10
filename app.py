@@ -79,11 +79,11 @@ async def kruti(
                 files = task.input.files
             elif isinstance(task.input, Mask):
                 bucket, pattern = task.input.mask[5:].split('/', 1)
-                _, ext = pattern.split('.', 1)
-                ext = '.' + ext
                 files = list_files_with_pattern(bucket, pattern)
 
             for idx, file in enumerate(files):
+                _, ext = file.split('.', 1)
+                ext = '.' + ext
                 # Parse bucket and key
                 s3_uri = file[5:]
                 bucket, key = s3_uri.split('/', 1)
